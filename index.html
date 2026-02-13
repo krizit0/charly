@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Feliz Mes</title>
+
+<!-- FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body{
+    background: #000;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+button{
+    padding:10px 20px;
+    margin:10px;
+    background:#ff4d6d;
+    border:none;
+    color:white;
+    cursor:pointer;
+    border-radius:8px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Feliz Mes, Mi Vida ❤️</h1>
+
+<button id="toggle-audio">
+<i id="audio-icon" class="fa-solid fa-volume-high"></i>
+</button>
+
+<button id="toggle-fullscreen">
+<i class="fa-solid fa-expand"></i>
+</button>
+
+<div>Para ti, mi amor, en nuestro día especial.</div>
+<div>Te amo con todo mi corazón.</div>
+
+<audio id="music" src="tu-cancion.mp3"></audio>
+
+<script>
+const audio = document.getElementById("music");
+const btnAudio = document.getElementById("toggle-audio");
+const btnFullscreen = document.getElementById("toggle-fullscreen");
+
+btnAudio.addEventListener("click", () => {
+    if(audio.paused){
+        audio.play();
+    } else {
+        audio.pause();
+    }
+});
+
+btnFullscreen.addEventListener("click", () => {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else {
+        document.exitFullscreen();
+    }
+});
+</script>
+
+</body>
+</html>
